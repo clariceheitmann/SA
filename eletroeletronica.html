@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./icon_flor.png" type="image/png">
+  <link rel="stylesheet" href="./style-principal.css">
+  <script src="prog.js" defer></script>
+  <title>Fundamentos de Eletroeletrônica</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 0 20px; }
+    h2 { color: #2E8B57; margin-top: 30px; }
+    pre { background-color: #f4f4f4; padding: 10px; border-left: 5px solid #2E8B57; overflow-x: auto; }
+    code { font-family: monospace; }
+    ul { margin-left: 20px; }
+    .container { max-width: 900px; margin: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-container">
+      <h1 class="logo">Situação de Aprendizagem</h1>
+      <select id="menu-select" aria-label="Escolha sua página">
+        <option disabled selected>Escolha sua página</option>
+        <option value="./index.html">🌹Início</option>
+        <option value="./eletroeletronica.html">🌸Fundamentos de Eletroeletrônica</option>
+        <option value="./logica_computacional.html">🌻Lógica Computacional</option>
+        <option value="./banco_dados.html">🏵️Fundamentos de Banco de Dados</option>
+        <option value="./redes.html">🪻Fundamentos de Redes</option>
+        <option value="./logica_programacao.html">💮Lógica de Programação</option>
+        <option value="./tecnologia_informacao.html">🌼Fundamentos de TI</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h2>1. Componentes Eletrônicos Empregados em Serviços</h2>
+      <ul>
+        <li><strong>Resistor:</strong> Limita ou controla a corrente elétrica. Tipos: fixo, variável, fusível. Aplicações: ajuste de LEDs, divisores de tensão, proteção de circuitos.</li>
+        <li><strong>Diodo:</strong> Permite passagem de corrente em apenas um sentido. Tipos: retificador, Zener, Schottky. Aplicações: proteção de polaridade, retificação AC.</li>
+        <li><strong>LED:</strong> Diodo emissor de luz, usado como indicador, display ou iluminação. Consome pouca energia e tem longa vida útil.</li>
+        <li><strong>Transistor:</strong> Amplifica sinais ou funciona como chave eletrônica. Tipos: BJT (NPN/PNP), MOSFET. Aplicações: motores, amplificadores, switches digitais.</li>
+        <li><strong>Circuito Integrado (CI):</strong> Chip que integra vários componentes, ex.: 555 (temporizador), LM358 (amplificador). Aplicações: computadores, automação, sistemas embarcados.</li>
+      </ul>
+
+      <h2>2. Sensores Empregados em Sistemas Automatizados</h2>
+      <ul>
+        <li><strong>Sensor de Temperatura:</strong> LM35, DHT11. Mede temperatura e converte em sinal elétrico. Usado em termostatos e robótica.</li>
+        <li><strong>Sensor de Umidade:</strong> DHT22. Mede umidade relativa do ar, usado em irrigação automática e climatização.</li>
+        <li><strong>Sensor de Luminosidade (LDR):</strong> Mede intensidade de luz, útil para iluminação automática e segurança.</li>
+        <li><strong>Outros sensores:</strong> Ultrassônico (distância), PIR (movimento), MQ-2 (gás). Aplicações: automação, robótica, segurança.</li>
+      </ul>
+
+      <h2>3. Arduino: O que é, Para que serve / Aplicações, Vantagens e Desvantagens</h2>
+      <p>Plataforma open-source composta por placa com microcontrolador e software IDE para criar dispositivos eletrônicos interativos.</p>
+      <ul>
+        <li>Aplicações: robôs, sistemas IoT, automação residencial e industrial.</li>
+        <li>Vantagens: fácil aprendizado, comunidade ativa, baixo custo, compatível com diversos sensores.</li>
+        <li>Desvantagens: limitações de processamento e memória, não indicado para sistemas industriais complexos.</li>
+      </ul>
+
+      <h2>4. Como o Arduino Funciona / Eletrônica Embarcada</h2>
+      <p>O Arduino lê sinais de sensores (entradas), processa dados via microcontrolador e aciona dispositivos (saídas). Eletrônica embarcada refere-se a sistemas eletrônicos integrados em dispositivos como carros, drones e eletrodomésticos inteligentes.</p>
+
+      <h2>5. Linguagens de Programação do Arduino</h2>
+      <ul>
+        <li><strong>C/C++:</strong> Principal linguagem da IDE.</li>
+        <li><strong>Python:</strong> Em placas compatíveis, como Raspberry Pi Pico.</li>
+        <li><strong>JavaScript:</strong> Possível com bibliotecas como Johnny-Five.</li>
+      </ul>
+      <pre><code>void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}</code></pre>
+
+      <h2>6. Entradas e Saídas Digitais</h2>
+      <p>Entradas digitais recebem sinais HIGH (1) ou LOW (0). Saídas digitais enviam sinais HIGH ou LOW.</p>
+      <pre><code>int led = 13;
+int button = 2;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT);
+}
+
+void loop() {
+  int state = digitalRead(button);
+  digitalWrite(led, state);
+}</code></pre>
+
+      <h2>7. Entradas e Saídas Analógicas</h2>
+      <p>Entrada analógica lê sinais contínuos (0-1023 no Arduino). Saída analógica (PWM) simula níveis variáveis.</p>
+      <pre><code>int led = 9;
+int sensor = A0;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  int valor = analogRead(sensor);
+  int brilho = map(valor, 0, 1023, 0, 255);
+  analogWrite(led, brilho);
+}</code></pre>
+
+      <h2>8. Script para cálculo pela Lei de Ohm</h2>
+      <p>Fórmulas: V = R × I, I = V / R, R = V / I</p>
+      <pre><code>function calcularOhm(V, I, R) {
+  if (!V) V = R * I;
+  if (!I) I = V / R;
+  if (!R) R = V / I;
+  return {V, I, R};
+}
+console.log(calcularOhm(10, 2, null));</code></pre>
+
+      <h2>9. Script para cálculo da Potência</h2>
+      <p>Fórmulas: P = V × I, P = I² × R, P = V² / R</p>
+      <pre><code>function calcularPotencia(V, I, R) {
+  if (V && I) return V * I;
+  if (I && R) return I * I * R;
+  if (V && R) return V * V / R;
+}
+console.log(calcularPotencia(10, 2, null));</code></pre>
+
+      <h2>10. Programa para leitura de sensor analógico e acionamento digital</h2>
+      <pre><code>int sensor = A0;
+int led = 13;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int valor = analogRead(sensor);
+  Serial.println(valor);
+  if (valor > 512) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+  delay(500);
+}</code></pre>
+
+      <h2>11. Diodo, LED e Display 7 Segmentos</h2>
+      <ul>
+        <li><strong>Diodo:</strong> Permite passagem de corrente em apenas um sentido.</li>
+        <li><strong>Diodo LED:</strong> Diodo que emite luz.</li>
+        <li><strong>Display 7 segmentos:</strong> Conjunto de LEDs formando números 0-9. Usado em relógios digitais, painéis e contadores.</li>
+      </ul>
+
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    Por: Clarice Heitmann - 2B &copy; &trade;
+  </footer>
+</body>
+</html>
+
+

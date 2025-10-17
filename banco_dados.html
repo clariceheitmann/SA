@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./icon_flor.png" type="image/png">
+  <link rel="stylesheet" href="./style-principal.css">
+  <script src="prog.js" defer></script>
+  <title>Fundamentos de Banco de Dados</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 0 20px; }
+    h2 { color: #2E8B57; margin-top: 30px; }
+    pre { background-color: #f4f4f4; padding: 10px; border-left: 5px solid #2E8B57; overflow-x: auto; }
+    code { font-family: monospace; }
+    ul { margin-left: 20px; }
+    .container { max-width: 900px; margin: auto; }
+    .foto-placeholder { 
+      width: 100%; height: 200px; background-color: #ddd; text-align:center; 
+      line-height: 200px; color: #555; margin: 10px 0; font-style: italic;
+    }
+    form { background-color: #f9f9f9; padding: 15px; border: 1px solid #ccc; border-radius: 5px; max-width: 500px; }
+    form label { display: block; margin-top: 10px; }
+    form input { width: 100%; padding: 5px; margin-top: 5px; }
+    form input[type="submit"] { width: auto; background-color: #2E8B57; color: white; border: none; cursor: pointer; margin-top: 15px; padding: 8px 15px; border-radius: 3px; }
+    form input[type="submit"]:hover { background-color: #246b45; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-container">
+      <h1 class="logo">Situação de Aprendizagem</h1>
+      <select id="menu-select" aria-label="Escolha sua página">
+        <option disabled selected>Escolha sua página</option>
+        <option value="./index.html">🌹Início</option>
+        <option value="./eletroeletronica.html">🌸Fundamentos de Eletroeletrônica</option>
+        <option value="./logica_computacional.html">🌻Lógica Computacional</option>
+        <option value="./banco_dados.html">🏵️Fundamentos de Banco de Dados</option>
+        <option value="./redes.html">🪻Fundamentos de Redes</option>
+        <option value="./logica_programacao.html">💮Lógica de Programação</option>
+        <option value="./tecnologia_informacao.html">🌼Fundamentos de TI</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h2>1. O que é um SGBD? Tipos e Aplicações</h2>
+      <p>
+        Um SGBD (Sistema de Gerenciamento de Banco de Dados) é um software que permite criar, gerenciar e manipular bancos de dados.
+        Ele garante integridade, segurança e acessibilidade dos dados.
+      </p>
+      <p><strong>Tipos de SGBD:</strong></p>
+      <ul>
+        <li>Relacional (RDBMS): MySQL, PostgreSQL, Oracle – Tabelas relacionadas, SQL</li>
+        <li>Não-relacional (NoSQL): MongoDB, Redis – Flexíveis, escaláveis, sem esquema rígido</li>
+        <li>Hierárquico: IBM IMS – Dados em árvore</li>
+        <li>Rede (Network): IDMS – Estrutura em rede, relacionamentos complexos</li>
+      </ul>
+      <p><strong>Aplicações:</strong> Sites, aplicativos, sistemas corporativos, e-commerce, bancos, IoT.</p>
+
+      <h2>2. Principais Bancos de Dados</h2>
+      <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+          <th>Tipo</th>
+          <th>Exemplos</th>
+          <th>Características</th>
+        </tr>
+        <tr>
+          <td>Relacional</td>
+          <td>MySQL, PostgreSQL, Oracle, SQL Server</td>
+          <td>Tabelas, chaves primárias, SQL</td>
+        </tr>
+        <tr>
+          <td>NoSQL</td>
+          <td>MongoDB, Redis, Cassandra</td>
+          <td>Flexível, escalável, sem esquema rígido</td>
+        </tr>
+        <tr>
+          <td>Hierárquico</td>
+          <td>IBM IMS</td>
+          <td>Dados em árvore</td>
+        </tr>
+        <tr>
+          <td>Rede</td>
+          <td>IDMS</td>
+          <td>Estrutura em rede, relacionamentos complexos</td>
+        </tr>
+      </table>
+
+      <h2>3. Dicionário de Dados e Tipos de Dados</h2>
+      <p>
+        O dicionário de dados é um repositório que descreve todos os elementos do banco de dados, como tabelas, campos, tipos, restrições e relacionamentos.
+      </p>
+      <p><strong>Tipos de dados comuns:</strong></p>
+      <ul>
+        <li>Inteiro (INT)</li>
+        <li>Real/Decimal (FLOAT, DECIMAL)</li>
+        <li>Cadeia de caracteres (CHAR, VARCHAR)</li>
+        <li>Data/Hora (DATE, TIME, DATETIME)</li>
+        <li>Booleano (BOOLEAN)</li>
+      </ul>
+
+      <h2>4. Modelagem de Banco de Dados, DER e MER</h2>
+      <p>
+        A modelagem de banco de dados é o processo de criar uma estrutura lógica que representa como os dados serão armazenados e relacionados.
+      </p>
+      <p><strong>DER (Diagrama de Entidade-Relacionamento):</strong> Representa entidades e seus relacionamentos. Ex.: Cliente – Pedido – Produto.</p>
+      <p><strong>MER (Modelo Entidade-Relacionamento):</strong> Representação formal detalhando atributos, chaves primárias e estrangeiras.</p>
+
+      <h2>5. Exemplo de Diagrama DER</h2>
+      <p>Mostra as entidades e seus relacionamentos, como Cliente – Pedido – Produto.</p>
+      <div class="foto-placeholder">fotooo9</div>
+
+      <h2>6. Exemplo de Diagrama MER</h2>
+      <p>Detalha atributos e chaves: Cliente (id_cliente, nome, email), Pedido (id_pedido, data, id_cliente), Produto (id_produto, nome, preço).</p>
+      <div class="foto-placeholder">fotooo10</div>
+
+      <h2>7. Formulário de cadastro de dados (simulação)</h2>
+      <p>Exemplo de formulário HTML para cadastrar dados simulando gravação em banco:</p>
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone">
+
+        <input type="submit" value="Cadastrar">
+      </form>
+
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    Por: Clarice Heitmann - 2B &copy; &trade;
+  </footer>
+</body>
+</html>
+

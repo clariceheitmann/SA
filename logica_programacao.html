@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./icon_flor.png" type="image/png">
+  <link rel="stylesheet" href="./style-principal.css">
+  <script src="prog.js" defer></script>
+  <title>Lógica de Programação</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 0 20px; }
+    h2 { color: #2E8B57; margin-top: 30px; }
+    pre { background-color: #f4f4f4; padding: 10px; border-left: 5px solid #2E8B57; overflow-x: auto; }
+    code { font-family: monospace; }
+    ul { margin-left: 20px; }
+    .container { max-width: 900px; margin: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-container">
+      <h1 class="logo">Situação de Aprendizagem</h1>
+      <select id="menu-select" aria-label="Escolha sua página">
+        <option disabled selected>Escolha sua página</option>
+        <option value="./index.html">🌹Início</option>
+        <option value="./eletroeletronica.html">🌸Fundamentos de Eletroeletrônica</option>
+        <option value="./logica_computacional.html">🌻Lógica Computacional</option>
+        <option value="./banco_dados.html">🏵️Fundamentos de Banco de Dados</option>
+        <option value="./redes.html">🪻Fundamentos de Redes</option>
+        <option value="./logica_programacao.html">💮Lógica de Programação</option>
+        <option value="./tecnologia_informacao.html">🌼Fundamentos de TI</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h2>1. Linguagens de Programação</h2>
+      <p>
+        Linguagens de programação são meios de comunicação entre humanos e computadores, permitindo criar programas, aplicativos e sistemas.
+        Podem ser de alto nível (mais próximas do humano) ou baixo nível (mais próximas do hardware).
+      </p>
+      <ul>
+        <li><strong>C++:</strong> Compilada, usada em sistemas, jogos e aplicações de alto desempenho.</li>
+        <li><strong>JavaScript:</strong> Interpretada, usada para interatividade em páginas web.</li>
+        <li><strong>Java:</strong> Compilada, orientada a objetos, usada em aplicativos corporativos e Android.</li>
+        <li><strong>Python:</strong> Interpretada, fácil de aprender, usada em ciência de dados, IA, automação.</li>
+        <li><strong>PHP:</strong> Interpretada, usada para desenvolvimento web no servidor.</li>
+      </ul>
+
+      <h2>2. Linguagens Interpretadas vs Compiladas</h2>
+      <p><strong>Interpretadas:</strong> Executadas linha a linha, ex.: Python, JavaScript, PHP. Vantagem: fácil depuração; desvantagem: mais lenta.</p>
+      <p><strong>Compiladas:</strong> Transformadas em linguagem de máquina antes de executar, ex.: C, C++, Java (bytecode). Vantagem: rápida; desvantagem: precisa compilar antes.</p>
+
+      <h2>3. HTML e CSS</h2>
+      <p><strong>HTML:</strong> Estrutura páginas web.</p>
+      <p><strong>CSS:</strong> Define o estilo visual (cores, fontes, layout) das páginas web.</p>
+
+      <h2>4. IDEs</h2>
+      <p>IDE (Integrated Development Environment) é um ambiente de desenvolvimento que integra editor de código, depurador, compilador/interpreter e gerenciamento de projetos.</p>
+      <p>Exemplos: VSCode, IntelliJ, PyCharm, Eclipse.</p>
+
+      <h2>5. Ordenar números de 1 a 20</h2>
+      <pre><code>let numeros = [];
+for(let i = 1; i <= 20; i++){
+  numeros.push(i);
+}
+console.log("Ordem crescente: " + numeros);
+console.log("Ordem decrescente: " + numeros.slice().reverse());</code></pre>
+
+      <h2>6. Ordenar 10 números aleatórios (BubbleSort)</h2>
+      <pre><code>let numeros = [];
+for(let i = 0; i < 10; i++){
+  numeros.push(Math.floor(Math.random() * 20) + 1);
+}
+console.log("Antes da ordenação: " + numeros);
+
+for(let i = 0; i < numeros.length - 1; i++){
+  for(let j = 0; j < numeros.length - i - 1; j++){
+    if(numeros[j] > numeros[j + 1]){
+      let temp = numeros[j];
+      numeros[j] = numeros[j + 1];
+      numeros[j + 1] = temp;
+    }
+  }
+}
+console.log("Depois da ordenação: " + numeros);</code></pre>
+
+      <h2>7. Somar 10 números aleatórios (1 a 220)</h2>
+      <pre><code>let numeros = [];
+let soma = 0;
+for(let i = 0; i < 10; i++){
+  let num = Math.floor(Math.random() * 220) + 1;
+  numeros.push(num);
+  soma += num;
+}
+console.log("Números: " + numeros);
+console.log("Soma: " + soma);</code></pre>
+
+      <h2>8. Gerar matriz 3 x 3 de números aleatórios (1 a 20)</h2>
+      <pre><code>let matriz = [];
+for(let i = 0; i < 3; i++){
+  matriz[i] = [];
+  for(let j = 0; j < 3; j++){
+    matriz[i][j] = Math.floor(Math.random() * 20) + 1;
+  }
+}
+console.table(matriz);</code></pre>
+
+      <h2>9. Calcular IMC de uma pessoa</h2>
+      <pre><code>function calcularIMC(peso, altura){
+  let imc = peso / (altura * altura);
+  return imc.toFixed(2);
+}
+let peso = 70;
+let altura = 1.75;
+console.log("IMC: " + calcularIMC(peso, altura));</code></pre>
+
+      <h2>10. Converter temperatura (°C e °F)</h2>
+      <pre><code>function cParaF(c){ return (c * 9/5) + 32; }
+function fParaC(f){ return (f - 32) * 5/9; }
+
+let celsius = 25;
+let fahrenheit = 77;
+
+console.log(celsius + "°C = " + cParaF(celsius) + "°F");
+console.log(fahrenheit + "°F = " + fParaC(fahrenheit).toFixed(2) + "°C");</code></pre>
+
+      <h2>11. Busca Linear</h2>
+      <p>A busca linear percorre todos os elementos de um array verificando se algum elemento é igual ao valor buscado. Simples, mas menos eficiente para arrays grandes.</p>
+      <pre><code>let numeros = [5, 3, 8, 1, 9];
+let valorBusca = 8;
+let encontrado = false;
+
+for(let i = 0; i < numeros.length; i++){
+  if(numeros[i] === valorBusca){
+    encontrado = true;
+    console.log("Valor encontrado na posição " + i);
+    break;
+  }
+}
+
+if(!encontrado){
+  console.log("Valor não encontrado");
+}</code></pre>
+
+      <h2>12. Cálculo de IMC (repetição para referência)</h2>
+      <pre><code>function calcularIMC(peso, altura){
+  let imc = peso / (altura * altura);
+  return imc.toFixed(2);
+}
+
+let peso = 65;
+let altura = 1.70;
+console.log("IMC: " + calcularIMC(peso, altura));</code></pre>
+
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    Por: Clarice Heitmann - 2B &copy; &trade;
+  </footer>
+</body>
+</html>
+
